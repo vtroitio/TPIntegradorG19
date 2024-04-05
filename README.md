@@ -17,7 +17,7 @@ Descargar e Instalar [Node.js](https://nodejs.org/en) para poder utilizar el com
   npm install
 ```
 
-## Uso
+## Uso local
 
 Ejecutar el servidor
 ```bash
