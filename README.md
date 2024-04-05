@@ -1,6 +1,6 @@
 # Trabajo Practico Integrador
 
-Este es Trabajo Practico Integrador del Grupo 19 correspondiente al curso de Codo a Codo Full Stack Python comisión 24147
+Este es el Trabajo Practico Integrador del Grupo 19 correspondiente al curso de Codo a Codo Full Stack Python comisión 24147
 
 ## Instalación
 
