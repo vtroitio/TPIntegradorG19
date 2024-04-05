@@ -8,7 +8,7 @@ Clonar el repositorio
 ```bash
   git clone https://github.com/vtroitio/tp-integrador-g19.git
 ```
-Ir a la dirección del proyecto
+Ir a la carpeta del proyecto
 ```bash
   cd tp-integrador-g19
 ```
