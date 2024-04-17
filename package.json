@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Este es Trabajo Practico Integrador del Grupo 19 correspondiente al curso de Codo a Codo Full Stack Python comisión 24147",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vtroitio/tp-integrador-g19.git"
