@@ -1,82 +1,215 @@
+// Usamos la extension .scss porque Bootstrap 5 lo necesita para cargar
+// correctamente sus estilos
 @import 'bootstrap/scss/bootstrap';
+
+// Montserrat Font
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+  // Colores
   --light-blue: #118191;
   --primary-color: #fbfbfb;
   --secondary-color: #31595e;
+
+  // Hamburger
+  --bar-width: 60px;
+  --bar-height: 8px;
+  --hamburger-gap: 6px;
+  --hamburger-anim-timing: 200ms ease-in-out;
+  --sidebar-background-color: #fbfbfbfe
 }
-html {
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
   font-family: Montserrat;
   font-size: 22px;
   scroll-behavior: smooth;
 }
 body {
+  margin: 0;
   color: var(--secondary-color);
   background-color: var(--primary-color);
   text-align: center;
 }
 header {
-  position: sticky;
-  top: 0;
+  width: 100%;
+  position: fixed;
   z-index: 999;
 }
-nav {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-ul {
+nav ul {
   margin: 0 auto;
   padding: 0;
   list-style-type: none;
   // align-items: center;
 }
-li {
+nav ul li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+.navbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar ul li {
   display: inline;
   margin-right: 15px;
   padding-bottom: 4px;
 }
-li:hover {
+.navbar ul li:hover {
   border-bottom: 1px solid var(--secondary-color);
 }
-li a {
-  text-decoration: none;
-  color: var(--secondary-color);
+.navbar ul li a {
+  animation: navbar-dinamica auto linear;
+  animation-timeline: scroll(root);
 }
 section {
   height: 100vh;
   padding-top: 60px;
   // background-color:aquamarine;
 }
+#inicio {
+  padding: 0;
+}
 #productos {
+  background-color: var(--light-blue);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
 }
 #productos h2 {
+  color: #fbfbfb;
   margin-bottom: 100px;
 }
-.carousel-control-prev,
-.carousel-control-next,
-.carousel-indicators {
-    filter: invert(0.8);
+#contacto {
+  background-color: var(--light-blue);
+  color: var(--primary-color);
+  height: 95vh;
 }
+// .carousel-control-prev,
+// .carousel-control-next,
+// .carousel-indicators {
+//     filter: invert(0.8);
+// }
 footer {
-  height: 50px;
+  background-color: var(--light-blue);
+  color: var(--primary-color);
+  height: 5vh;
 }
 
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px 15px 0 0;
+  gap: var(--hamburger-gap);
+  z-index: 999;
+  cursor: pointer;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: '';
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--secondary-color);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition: opacity var(--hamburger-anim-timing),
+    width var(--hamburger-anim-timing), rotate var(--hamburger-anim-timing),
+    translate var(--hamburger-anim-timing);
+}
+
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: 51px;
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: 51px;
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+  translate: 0;
+}
+
+.sidebar {
+  transition: tanslate var(--hamburger-anim-timing);
+  translate: -100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: var(--sidebar-background-color);
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+.sidebar-link {
+  transition: tanslate var(--hamburger-anim-timing);
+  font-size: 2rem;
+}
+.sidebar-link:hover {
+  color: var(--light-blue);
+}
 // Responsive
+
+// Tablet
 @media (max-width: 768px) {
-  html {
+  * {
     font-size: 18px;
+  }
+  .navbar {
+    display: none;
+  }
+  .hamburger-menu {
+    display: flex;
   }
 }
 
+// Móvil
 @media (max-width: 450px) {
-  html {
+  * {
     font-size: 12px;
   }
 }
+
+// @keyframes navbar-dinamica {
+//   0% {
+//     color: var(--secondary-color);
+//   }
+//   25% {
+//     color: var(--primary-color);
+//   }
+//   50% {
+//     color: var(--secondary-color);
+//   }
+//   75% {
+//     color: var(--primary-color);
+//   }
+//   100% {
+//     color: var(--secondary-color);
+//   }
+// }
