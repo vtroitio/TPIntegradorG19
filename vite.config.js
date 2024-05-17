@@ -2,10 +2,10 @@ import { resolve } from 'path'
 
 export default {
   root: resolve(__dirname, 'src'),
+  publicDir: '../public',
   build: {
     outDir: '../dist'
   },
-  publicDir: '../public',
   server: {
     port: 5173
   }
