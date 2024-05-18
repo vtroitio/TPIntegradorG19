@@ -1,50 +1,211 @@
+// Usamos la extension .scss porque Bootstrap 5 lo necesita para cargar
+// correctamente sus estilos
 @import 'bootstrap/scss/bootstrap';
 
-* {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,
-    sans-serif;
+// Montserrat Font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  // Colores
+  --first-color: #fbfbfb;
+  --second-color: #118191;
+  --third-color: #31595e;
+  --fourth-color: #0b0b0b;
+
+  // Hamburger
+  --bar-width: 60px;
+  --bar-height: 6px;
+  --hamburger-gap: 6px;
+  --hamburger-anim-timing: 200ms ease-in-out;
+  --sidebar-background-color: #fbfbfbee;
 }
-html {
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: Montserrat, system-ui, -apple-system, sans-serif;
+  font-size: 22px;
   scroll-behavior: smooth;
+  color: var(--fourth-color);
 }
 body {
-  color: white;
-  background-color: #1499ac;
+  margin: 0;
+  background-color: var(--primary-color);
+  text-align: center;
 }
 header {
-  position: sticky;
-  top: 0;
+  width: 100%;
+  position: fixed;
   z-index: 999;
 }
-nav {
+nav ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+nav ul li a {
+  text-decoration: none;
+}
+.navbar {
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-ul {
-  margin: 0 auto;
-  padding: 0;
-  list-style-type: none;
-  // align-items: center;
-}
-li {
+.navbar ul li {
   display: inline;
   margin-right: 15px;
+  padding-bottom: 4px;
 }
-li a {
-  text-decoration: none;
-  color: white;
+.navbar ul li:hover {
+  border-bottom: 1px solid var(--third-color);
+}
+.navbar ul li a {
+  color: var(--third-color);
+  animation: navbar-dinamica auto linear;
+  animation-timeline: scroll(root);
 }
 section {
   height: 100vh;
-  // background-color:aquamarine;
+  padding-top: 60px;
 }
+#productos {
+  background-color: var(--second-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+#productos h2 {
+  color: var(--first-color);
+  margin-bottom: 100px;
+}
+#contacto {
+  background-color: var(--second-color);
+  color: var(--first-color);
+  height: 95vh;
+}
+// .carousel-control-prev,
+// .carousel-control-next,
+// .carousel-indicators {
+//     filter: invert(0.8);
+// }
 footer {
-  height: 50px;
-  background-color: brown;
+  background-color: var(--second-color);
+  color: var(--first-color);
+  height: 5vh;
 }
+.hamburger-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px 15px 0 0;
+  gap: var(--hamburger-gap);
+  z-index: 999;
+  cursor: pointer;
+}
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: '';
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--second-color);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition: opacity var(--hamburger-anim-timing),
+    width var(--hamburger-anim-timing), rotate var(--hamburger-anim-timing),
+    translate var(--hamburger-anim-timing);
+}
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: 42px;
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: 42px;
+  translate: 0 calc(var(--bar-height) / 2);
+}
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+.hamburger-menu:has(input:checked) + .sidebar {
+  translate: 0;
+}
+
+.sidebar {
+  transition: translate var(--hamburger-anim-timing);
+  translate: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--sidebar-background-color);
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+.sidebar-link {
+  font-size: 2rem;
+  color: var(--fourth-color);
+}
+.sidebar-link:hover {
+  color: var(--second-color);
+}
+
+/*    Responsive    */
+
+// Tablet
+@media (max-width: 768px) {
+  * {
+    font-size: 18px;
+  }
+  .navbar {
+    display: none;
+  }
+  .hamburger-menu {
+    display: flex;
+  }
+}
+
+// Móvil
+@media (max-width: 450px) {
+  * {
+    font-size: 12px;
+  }
+}
+
+/*    Animaciones   */
+
+// @keyframes navbar-dinamica {
+//   0% {
+//     color: var(--second-color);
+//   }
+//   50% {
+//     color: var(--first-color);
+//   }
+//   75% {
+//     color: var(--second-color);
+//   }
+//   100% {
+//     color: var(--first-color);
+//   }
+// }
 
 
 /*estilos para contact*/

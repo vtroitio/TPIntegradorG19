@@ -8,7 +8,20 @@
   </head>
   <body>
     <header>
-      <nav>
+      <label class="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <li><a class="sidebar-link" href="#inicio">Inicio</a></li>
+            <li><a class="sidebar-link" href="#productos">Productos</a></li>
+            <li><a class="sidebar-link" href="#nosotros">Nosotros</a></li>
+            <li><a class="sidebar-link" href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <nav class="navbar">
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#productos">Productos</a></li>
@@ -18,15 +31,17 @@
       </nav>
     </header>
     <main>
-      <section id="inicio">INICIO</section>
+      <section id="inicio">
+        <h2>Inicio</h2>
+      </section>
       <section id="productos">
-        PRODUCTOS
+        <h2>Nuestro Trabajo</h2>
         <div class="container">
-          <div id="carouselExampleIndicators" class="carousel slide">
+          <div id="productsCarousel" class="carousel slide">
             <div class="carousel-indicators">
               <button
                 type="button"
-                data-bs-target="#carouselExampleIndicators"
+                data-bs-target="#productsCarousel"
                 data-bs-slide-to="0"
                 class="active"
                 aria-current="true"
@@ -34,13 +49,13 @@
               ></button>
               <button
                 type="button"
-                data-bs-target="#carouselExampleIndicators"
+                data-bs-target="#productsCarousel"
                 data-bs-slide-to="1"
                 aria-label="Slide 2"
               ></button>
               <button
                 type="button"
-                data-bs-target="#carouselExampleIndicators"
+                data-bs-target="#productsCarousel"
                 data-bs-slide-to="2"
                 aria-label="Slide 3"
               ></button>
@@ -71,7 +86,7 @@
             <button
               class="carousel-control-prev"
               type="button"
-              data-bs-target="#carouselExampleIndicators"
+              data-bs-target="#productsCarousel"
               data-bs-slide="prev"
             >
               <span
@@ -83,7 +98,7 @@
             <button
               class="carousel-control-next"
               type="button"
-              data-bs-target="#carouselExampleIndicators"
+              data-bs-target="#productsCarousel"
               data-bs-slide="next"
             >
               <span
@@ -95,8 +110,12 @@
           </div>
         </div>
       </section>
-      <section id="nosotros">NOSOTROS</section>
-      <section id="contacto">CONTACTO</section>
+      <section id="nosotros">
+        <h2>Sobre Nosotros</h2>
+      </section>
+      <section id="contacto">
+        <h2>Contacto</h2>
+      </section>
     </main>
     <footer>FOOTER</footer>
     <script type="module" src="./js/main.js"></script>
