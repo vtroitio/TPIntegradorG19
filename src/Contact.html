@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <link rel="stylesheet" href="./scss/styles.scss" />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnH2N2G/DsoI5SHtA3NP4vjGds4o3POi4vniD0TcFsbbKmbZ4crWW+uXrMGuv8B6Gq6VgZAAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+   
+        <nav class="navbar">
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
     <main>
         <h1>Contactanos</h1>
         <section id="contact">
-            <form id="contactForm" onsubmit="return validateForm()">
+            <form id="contactForm" action="" method="GET" onsubmit="return validateForm()">
+
                 <div>
                     <label for="name">Nombre</label>
                     <input type="text" id="name" name="name" required>
@@ -69,7 +74,9 @@
             </form>
         </section>
     </main>
-    <footer>FOOTER</footer>
+    <footer>
+  footer.
+    </footer>
     <script src="./src/js/validation.js"></script>
 </body>
 </html>
