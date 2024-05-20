@@ -16,9 +16,10 @@
   --bar-width: 60px;
   --bar-height: 6px;
   --hamburger-gap: 6px;
+  --bar-background-color: #fbfbfbee;
   --hamburger-anim-timing: 200ms ease-in-out;
-  --sidebar-background-color: #fbfbfbee;
 }
+
 *,
 *::after,
 *::before {
@@ -65,6 +66,9 @@ nav ul li a {
   animation: navbar-dinamica auto linear;
   animation-timeline: scroll(root);
 }
+.blur {
+  background-color: var(--bar-background-color);
+}
 section {
   height: 100vh;
   padding-top: 60px;
@@ -83,7 +87,7 @@ section {
 #contacto {
   background-color: var(--second-color);
   color: var(--first-color);
-  height: 95vh;
+  max-height: 95vh;
 }
 // .carousel-control-prev,
 // .carousel-control-next,
@@ -147,15 +151,15 @@ footer {
 }
 
 .sidebar {
+  display: none;
   transition: translate var(--hamburger-anim-timing);
   translate: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--sidebar-background-color);
+  background-color: var(--bar-background-color);
   width: 100vw;
   height: 100vh;
   z-index: -1;
@@ -178,7 +182,8 @@ footer {
   .navbar {
     display: none;
   }
-  .hamburger-menu {
+  .hamburger-menu,
+  .sidebar {
     display: flex;
   }
 }
@@ -189,20 +194,3 @@ footer {
     font-size: 12px;
   }
 }
-
-/*    Animaciones   */
-
-// @keyframes navbar-dinamica {
-//   0% {
-//     color: var(--second-color);
-//   }
-//   50% {
-//     color: var(--first-color);
-//   }
-//   75% {
-//     color: var(--second-color);
-//   }
-//   100% {
-//     color: var(--first-color);
-//   }
-// }
