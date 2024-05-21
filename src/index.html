@@ -122,10 +122,68 @@
         <h2>Sobre Nosotros</h2>
       </section>
       <section id="contacto">
-        <h2>Contacto</h2>
+        <form
+          id="contactForm"
+          action=""
+          method="GET"
+          onsubmit="return validateForm()"
+        >
+          <div>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div>
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="3" required></textarea>
+          </div>
+
+          <div>
+            <label>¿Cómo nos encontraste?</label>
+            <div>
+              <input
+                type="checkbox"
+                value="Redes Sociales"
+                id="redesSociales"
+                name="howFound"
+              />
+              <label for="redesSociales">Redes Sociales</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                value="Búsqueda en Internet"
+                id="busquedaInternet"
+                name="howFound"
+              />
+              <label for="busquedaInternet">Búsqueda en Internet</label>
+            </div>
+          </div>
+          <div>
+            <label for="selectOption">Motivo de Contacto</label>
+            <select id="selectOption" name="reason" required>
+              <option value="">Selecciona un motivo</option>
+              <option value="Consulta">Consulta</option>
+              <option value="Comentario">Comentario</option>
+              <option value="Solicitud">Solicitud</option>
+            </select>
+          </div>
+          <div>
+            <label for="exampleInputFile">Adjuntar Archivo</label>
+            <input type="file" id="exampleInputFile" />
+            <div id="fileHelp">Adjunta un archivo (opcional).</div>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
       </section>
     </main>
     <footer><h6>FOOTER</h6></footer>
+    <script type="module" src="./js/validation.js"></script>
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/modelsLoader.js"></script>
   </body>
