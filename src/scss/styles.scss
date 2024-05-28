@@ -155,13 +155,12 @@ form button[type='submit']:hover {
 /*  fatema contact */
 /*estilo para el footer*/
 footer {
-  background-color: var(--second-color);
-  color: var(--first-color);
-  height: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 0;
+flex-direction: column;
+margin-top: 40vh;
 }
 
 .social-icons {
@@ -193,11 +192,12 @@ footer {
 // .carousel-indicators {
 //     filter: invert(0.8);
 // }
+/*
 footer {
   background-color: var(--second-color);
   color: var(--first-color);
   height: 5vh;
-}
+} aqui */
 .hamburger-menu {
   display: none;
   position: absolute;
