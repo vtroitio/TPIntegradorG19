@@ -78,13 +78,13 @@ nav ul li a {
 }
 section {
   height: 100vh;
-  padding-top: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #productos {
   background-color: var(--second-color);
+  padding: 50px 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,14 +107,14 @@ form {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 600px;
-  margin: 0 auto;  
+  margin: 0 auto;
 }
 
 form div {
   /*display: flex;*/
-  flex-direction: column;  
+  flex-direction: column;
   margin-bottom: 15px;
-  text-align: left;  
+  text-align: left;
 }
 
 form label {
@@ -144,8 +144,8 @@ form button[type='submit'] {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  width: fit-content;  
-  align-self: flex-start; 
+  width: fit-content;
+  align-self: flex-start;
 }
 
 form button[type='submit']:hover {
@@ -271,12 +271,78 @@ footer {
   color: var(--second-color);
 }
 
+.containerGrandeResponsive {
+  text-align: left;
+  padding: 0 50px;
+  margin: 50px 0;
+}
+
+.containerResponsive {
+  max-width: 1320px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  margin: 0 auto;
+  color: var(--third-color);
+}
+
+.containerResponsiveTextos {
+  width: 100%;
+  // margin: 0 auto;
+}
+
+.tituloSobreNosotros {
+  line-height: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subtituloParrafo1 {
+  line-height: 26px;
+  color: var(--third-color);
+  margin-bottom: 20px;
+}
+
+.imagenCarta {
+  width: 31px;
+  height: 31px;
+}
+
+.cajaImagen {
+  padding: 20px;
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.cajaTarjeta {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 15px;
+}
+
+.tituloCarta {
+  line-height: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtituloCarta {
+  color: var(--third-color);
+  line-height: 22px;
+}
+
 /*    Responsive    */
 
 // Tablet
 @media (max-width: 768px) {
   * {
     font-size: 18px;
+  }
+  section {
+    height: max-content;
   }
   .navbar {
     display: none;
@@ -285,6 +351,21 @@ footer {
   .sidebar {
     display: flex;
   }
+  // .containerResponsiveTextos {
+  //     width: 100%;
+  //     align-items: center;
+  //     flex-direction: column;
+  //     justify-content: center;
+  // }
+
+  .tituloSobreNosotros {
+    text-align: center;
+  }
+
+  .containerResponsive {
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+  }
 }
 
 // Móvil
@@ -292,4 +373,49 @@ footer {
   * {
     font-size: 12px;
   }
+  .containerGrnadeResponsive {
+    padding: 10px 20px;
+  }
+
+  .subtituloParrafo1 {
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  .tituloSobreNosotros {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .containerResponsiveTextos {
+    margin: 40px 0 50px 0;
+  }
+
+  .explore {
+    width: 100%;
+    padding: 17px 0;
+  }
+
+  .tituloCarta {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 8px;
+  }
+
+  .cajaTarjeta {
+    padding: 10px 0;
+  }
 }
+
+// @media (min-width: 1024px) {
+//   // .containerResponsive {
+//   //     flex-direction: column-reverse;
+//   //     align-items: flex-start;
+//   //     justify-content: center;
+//   // }
+
+//   .containerResponsiveTextos {
+//       width: 70%;
+//       margin: 0 auto;
+//   }
+// }
