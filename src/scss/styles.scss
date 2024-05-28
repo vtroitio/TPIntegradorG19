@@ -100,22 +100,24 @@ section {
   max-height: 95vh;
 }
 
-/*  fatema  */
+/*  fatema estilo de contact */
 form {
   background-color: #118191;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 600px;
-  margin: 0;
+  margin: 0 auto;  
 }
 
 form div {
+  /*display: flex;*/
+  flex-direction: column;  
   margin-bottom: 15px;
+  text-align: left;  
 }
 
 form label {
-  display: inline-flex;
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -124,11 +126,10 @@ form input[type='text'],
 form input[type='email'],
 form textarea,
 form select {
-  width: calc(100% - 22px);
+  width: 100%;
   padding: 10px;
   border: 1px solid #ced4da;
   border-radius: 4px;
-  margin: 0;
 }
 
 form input[type='checkbox'] {
@@ -143,12 +144,49 @@ form button[type='submit'] {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  width: fit-content;  
+  align-self: flex-start; 
 }
 
 form button[type='submit']:hover {
   background-color: #0056b3;
 }
-/*  fatema  */
+
+/*  fatema contact */
+/*estilo para el footer*/
+footer {
+  background-color: var(--second-color);
+  color: var(--first-color);
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons li {
+  display: inline-block;
+}
+
+.social-icons a {
+  color: var(--first-color);
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: var(--third-color);
+}
+
+/*estilo para el footer*/
 
 // .carousel-control-prev,
 // .carousel-control-next,
