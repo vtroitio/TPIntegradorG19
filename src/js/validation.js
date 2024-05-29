@@ -1,41 +1,60 @@
-
-function validateForm() {
+document.addEventListener('DOMContentLoaded', function () {
+    function showError(element, message) {
+      const errorElement = document.getElementById(element.id + 'Error');
+      errorElement.textContent = message;
+      element.focus();
+    }
   
-    var nameInput = document.getElementById('name');
-    var emailInput = document.getElementById('email');
-    var messageInput = document.getElementById('message');
-    var selectOption = document.getElementById('selectOption');
-
-   
-    if (nameInput.value.trim() === '') {
-        alert('Por favor, ingresa tu nombre.');
-        nameInput.focus();
-        return false;
+    function clearError(element) {
+      const errorElement = document.getElementById(element.id + 'Error');
+      errorElement.textContent = '';
     }
-
-    if (emailInput.value.trim() === '') {
-        alert('Por favor, ingresa tu correo electrónico.');
-        emailInput.focus();
-        return false;
+  
+    function validateForm(event) {
+      let isValid = true;
+  
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+      const selectOption = document.getElementById('selectOption');
+  
+     
+      clearError(nameInput);
+      clearError(emailInput);
+      clearError(messageInput);
+      clearError(selectOption);
+  
+      if (nameInput.value.trim() === '') {
+        showError(nameInput, 'Por favor, ingresa tu nombre.');
+        isValid = false;
+      }
+  
+      if (emailInput.value.trim() === '') {
+        showError(emailInput, 'Por favor, ingresa tu correo electrónico.');
+        isValid = false;
+      } else {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value.trim())) {
+          showError(emailInput, 'Por favor, ingresa un correo electrónico válido.');
+          isValid = false;
+        }
+      }
+  
+      if (messageInput.value.trim() === '') {
+        showError(messageInput, 'Por favor, ingresa tu mensaje.');
+        isValid = false;
+      }
+  
+      if (selectOption.value === '') {
+        showError(selectOption, 'Por favor, selecciona un motivo de contacto.');
+        isValid = false;
+      }
+  
+      if (!isValid) {
+        event.preventDefault();
+      }
     }
-
-    if (messageInput.value.trim() === '') {
-        alert('Por favor, ingresa tu mensaje.');
-        messageInput.focus();
-        return false;
-    }
-
-    if (selectOption.value === '') {
-        alert('Por favor, selecciona un motivo de contacto.');
-        selectOption.focus();
-        return false;
-    }
-
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailInput.value.trim())) {
-        alert('Por favor, ingresa un correo electrónico válido.');
-        emailInput.focus();
-        return false;
-    }
-    return true;
-}
+  
+    document.getElementById('contactForm').addEventListener('submit', validateForm);
+  });
+  

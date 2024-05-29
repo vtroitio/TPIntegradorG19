@@ -123,55 +123,58 @@
         <h2>Sobre Nosotros</h2>
         
       </section>
-     <section id="contacto">
-      <form id="contactForm" action="" method="GET" onsubmit="return validateForm()">
-        <div>
-          <label for="name">Nombre</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-      
-        <div>
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-      
-        <div>
-          <label for="message">Mensaje</label>
-          <textarea id="message" name="message" rows="3" required></textarea>
-        </div>
-      
-        <div>
-          <label>¿Cómo nos encontraste?</label>
-          <div class="checkbox-group">
-            <input type="checkbox" value="Redes Sociales" id="redesSociales" name="howFound" />
-            <label for="redesSociales">Redes Sociales</label>
+      <section id="contacto">
+        <form id="contactForm" action="" method="GET" novalidate>
+          <div>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" />
+            <span class="error-message" id="nameError"></span>
           </div>
-          <div class="checkbox-group">
-            <input type="checkbox" value="Búsqueda en Internet" id="busquedaInternet" name="howFound" />
-            <label for="busquedaInternet">Búsqueda en Internet</label>
+          
+          <div>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" />
+            <span class="error-message" id="emailError"></span>
           </div>
-        </div>
-        
-        <div>
-          <label for="selectOption">Motivo de Contacto</label>
-          <select id="selectOption" name="reason" required>
-            <option value="">Selecciona un motivo</option>
-            <option value="Consulta">Consulta</option>
-            <option value="Comentario">Comentario</option>
-            <option value="Solicitud">Solicitud</option>
-          </select>
-        </div>
-      
-        <div>
-          <label for="exampleInputFile">Adjuntar Archivo</label>
-          <input type="file" id="exampleInputFile" />
-          <div id="fileHelp">Adjunta un archivo (opcional).</div>
-        </div>
-      
-        <button type="submit">Enviar</button>
-      </form>
-     
-</section>
+          
+          <div>
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+            <span class="error-message" id="messageError"></span>
+          </div>
+          
+          <div>
+            <label>¿Cómo nos encontraste?</label>
+            <div class="checkbox-group">
+              <input type="checkbox" value="Redes Sociales" id="redesSociales" name="howFound" />
+              <label for="redesSociales">Redes Sociales</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" value="Búsqueda en Internet" id="busquedaInternet" name="howFound" />
+              <label for="busquedaInternet">Búsqueda en Internet</label>
+            </div>
+          </div>
+          
+          <div>
+            <label for="selectOption">Motivo de Contacto</label>
+            <select id="selectOption" name="reason">
+              <option value="">Selecciona un motivo</option>
+              <option value="Consulta">Consulta</option>
+              <option value="Comentario">Comentario</option>
+              <option value="Solicitud">Solicitud</option>
+            </select>
+            <span class="error-message" id="selectOptionError"></span>
+          </div>
+          
+          <div>
+            <label for="exampleInputFile">Adjuntar Archivo</label>
+            <input type="file" id="exampleInputFile" />
+            <div id="fileHelp">Adjunta un archivo (opcional).</div>
+          </div>
+          
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
 
     </main>
     <footer>
