@@ -106,8 +106,8 @@ form {
   padding: 35px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 0 auto;
+  width: 55%;
+  margin: 50px auto;
 }
 
 form div {
@@ -118,6 +118,7 @@ form div {
 }
 
 form label {
+  color: var(--fourth-color);
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -151,6 +152,12 @@ form button[type='submit'] {
 form button[type='submit']:hover {
   background-color: var(--second-color);
 }
+.checkbox-group {
+  margin: 0;
+}
+.checkbox-group label {
+  font-weight: normal;
+}
 
 /*  fatema contact */
 /*estilo para el footer*/
@@ -160,8 +167,13 @@ footer {
   height: 5vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   padding: 10px 0;
+}
+
+footer p {
+  color: var(--fourth-color);
 }
 
 .social-icons {
@@ -176,14 +188,10 @@ footer {
   display: inline-block;
 }
 
-.social-icons a {
-  color: var(--first-color);
+.bi::before {
+  color: var(--third-color);
   text-decoration: none;
   font-size: 24px;
-}
-
-.social-icons a:hover {
-  color: var(--third-color);
 }
 
 /*estilo para el footer*/
@@ -193,11 +201,12 @@ footer {
 // .carousel-indicators {
 //     filter: invert(0.8);
 // }
+/*
 footer {
   background-color: var(--second-color);
   color: var(--first-color);
   height: 5vh;
-}
+} aqui */
 .hamburger-menu {
   display: none;
   position: absolute;
@@ -342,6 +351,12 @@ footer {
     font-size: 18px;
   }
   section {
+    height: max-content;
+  }
+  form {
+    width: 80%;
+  }
+  #contacto {
     height: max-content;
   }
   .navbar {

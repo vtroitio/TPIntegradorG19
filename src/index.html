@@ -10,6 +10,10 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <title>Cincel</title>
     <link rel="stylesheet" href="./scss/styles.scss" />
   </head>
@@ -122,16 +126,15 @@
         <div class="containerGrandeResponsive">
           <div class="containerResponsive">
             <div class="containerResponsiveTextos">
-              <h2 class="tituloSobreNosotros"> Sobre Nosotros</h2>
+              <h2 class="tituloSobreNosotros">Sobre Nosotros</h2>
               <!-- <p class="tituloSobreNosotros">Sobre Nosotros</p> -->
               <p class="subtituloParrafo1">
                 <b>
-                  Bienvenidos a Cincel, tu destino de confianza
-                  para artículos innovadores y personalizados impresos en 3D.
-                  Fundada en 2010, nuestra misión es transformar
-                  tus ideas en realidades tangibles, combinando creatividad,
-                  tecnología avanzada y un compromiso inquebrantable con la
-                  calidad.
+                  Bienvenidos a Cincel, tu destino de confianza para artículos
+                  innovadores y personalizados impresos en 3D. Fundada en 2010,
+                  nuestra misión es transformar tus ideas en realidades
+                  tangibles, combinando creatividad, tecnología avanzada y un
+                  compromiso inquebrantable con la calidad.
                 </b>
               </p>
             </div>
@@ -181,10 +184,95 @@
         </div>
       </section>
       <section id="contacto">
-        <h2>Contacto</h2>
+        <form
+          id="contactForm"
+          action=""
+          method="GET"
+          onsubmit="return validateForm()"
+        >
+          <div>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div>
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="3" required></textarea>
+          </div>
+
+          <div>
+            <label>¿Cómo nos encontraste?</label>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                value="Redes Sociales"
+                id="redesSociales"
+                name="howFound"
+              />
+              <label for="redesSociales">Redes Sociales</label>
+            </div>
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                value="Búsqueda en Internet"
+                id="busquedaInternet"
+                name="howFound"
+              />
+              <label for="busquedaInternet">Búsqueda en Internet</label>
+            </div>
+          </div>
+
+          <div>
+            <label for="selectOption">Motivo de Contacto</label>
+            <select id="selectOption" name="reason" required>
+              <option value="">Selecciona un motivo</option>
+              <option value="Consulta">Consulta</option>
+              <option value="Comentario">Comentario</option>
+              <option value="Solicitud">Solicitud</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="exampleInputFile">Adjuntar Archivo</label>
+            <input type="file" id="exampleInputFile" />
+            <div id="fileHelp">Adjunta un archivo (opcional).</div>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
       </section>
     </main>
-    <footer><h6>FOOTER</h6></footer>
+    <footer>
+      <ul class="social-icons">
+        <li>
+          <a href="https://www.facebook.com" target="_blank"
+            ><i class="bi bi-facebook"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com" target="_blank"
+            ><i class="bi bi-twitter"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com" target="_blank"
+            ><i class="bi bi-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com" target="_blank"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+        </li>
+      </ul>
+      <p>&copy; 2024 Cincel. Todos los derechos reservados.</p>
+    </footer>
+    <script type="module" src="./js/validation.js"></script>
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/modelsLoader.js"></script>
   </body>
