@@ -14,12 +14,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <title>Cincel</title>
+    <title>Cisel</title>
     <link rel="stylesheet" href="./scss/styles.scss" />
   </head>
   <body>
     <header>
       <label class="hamburger-menu">
+        <img src="/favicon-32x32.png" alt="Logo" class="logo" />
         <input type="checkbox" />
       </label>
       <aside class="sidebar">
@@ -49,11 +50,11 @@
       <section id="productos">
         <h2>Nuestro Trabajo</h2>
         <div class="container">
-          <div id="productsCarousel" class="carousel slide">
+          <div id="carousel-productos" class="carousel slide">
             <div class="carousel-indicators">
               <button
                 type="button"
-                data-bs-target="#productsCarousel"
+                data-bs-target="#carousel-productos"
                 data-bs-slide-to="0"
                 class="active"
                 aria-current="true"
@@ -61,13 +62,13 @@
               ></button>
               <button
                 type="button"
-                data-bs-target="#productsCarousel"
+                data-bs-target="#carousel-productos"
                 data-bs-slide-to="1"
                 aria-label="Slide 2"
               ></button>
               <button
                 type="button"
-                data-bs-target="#productsCarousel"
+                data-bs-target="#carousel-productos"
                 data-bs-slide-to="2"
                 aria-label="Slide 3"
               ></button>
@@ -98,7 +99,7 @@
             <button
               class="carousel-control-prev"
               type="button"
-              data-bs-target="#productsCarousel"
+              data-bs-target="#carousel-productos"
               data-bs-slide="prev"
             >
               <span
@@ -110,7 +111,7 @@
             <button
               class="carousel-control-next"
               type="button"
-              data-bs-target="#productsCarousel"
+              data-bs-target="#carousel-productos"
               data-bs-slide="next"
             >
               <span
@@ -123,14 +124,14 @@
         </div>
       </section>
       <section id="nosotros">
-        <div class="containerGrandeResponsive">
-          <div class="containerResponsive">
-            <div class="containerResponsiveTextos">
-              <h2 class="tituloSobreNosotros">Sobre Nosotros</h2>
+        <div class="container-grande">
+          <div class="container">
+            <div class="container-textos">
+              <h2 class="titulo-sobre-nosotros">Sobre Nosotros</h2>
               <!-- <p class="tituloSobreNosotros">Sobre Nosotros</p> -->
-              <p class="subtituloParrafo1">
+              <p class="subtitulo-parrafo">
                 <b>
-                  Bienvenidos a Cincel, tu destino de confianza para artículos
+                  Bienvenidos a Cisel, tu destino de confianza para artículos
                   innovadores y personalizados impresos en 3D. Fundada en 2010,
                   nuestra misión es transformar tus ideas en realidades
                   tangibles, combinando creatividad, tecnología avanzada y un
@@ -138,13 +139,18 @@
                 </b>
               </p>
             </div>
-            <div class="cajaTarjeta">
-              <div class="cajaImagen">
-                <img class="imagenCarta" src="img/8336420.png" />
+            <div class="caja-tarjeta">
+              <div class="caja-imagen">
+                <img
+                  class="imagen-carta"
+                  alt="Tres siluetas de personas"
+                  src="img/8336420.png"
+                  loading="lazy"
+                />
               </div>
-              <div class="cartaTexto">
-                <p class="tituloCarta">¿Quiénes Somos?</p>
-                <p class="subtituloCarta">
+              <div class="carta-texto">
+                <p class="titulo-carta">¿Quiénes Somos?</p>
+                <p class="subtitulo-carta">
                   Somos un equipo apasionado de diseñadores y entusiastas de la
                   impresión 3D, dedicados a ofrecer soluciones únicas y
                   personalizadas para nuestros clientes. Cada miembro de nuestro
@@ -153,26 +159,36 @@
                 </p>
               </div>
             </div>
-            <div class="cajaTarjeta">
-              <div class="cajaImagen">
-                <img class="imagenCarta" src="img/papiro.jpg" />
+            <div class="caja-tarjeta">
+              <div class="caja-imagen">
+                <img
+                  class="imagen-carta"
+                  alt="Rollo desenrollado con una pluma"
+                  src="img/papiro.png"
+                  loading="lazy"
+                />
               </div>
-              <div class="cartaTexto">
-                <p class="tituloCarta">Nuestra Filosofía</p>
-                <p class="subtituloCarta">
+              <div class="carta-texto">
+                <p class="titulo-carta">Nuestra Filosofía</p>
+                <p class="subtitulo-carta">
                   Creemos en el poder de la personalización y en la magia de
                   convertir un simple diseño en un producto físico que puedes
                   tocar y sentir.
                 </p>
               </div>
             </div>
-            <div class="cajaTarjeta">
-              <div class="cajaImagen">
-                <img class="imagenCarta" src="img/correo-de-contacto-2.png" />
+            <div class="caja-tarjeta">
+              <div class="caja-imagen">
+                <img
+                  class="imagen-carta"
+                  alt="Telefono sobre una carta"
+                  src="img/correo-de-contacto-2.png"
+                  loading="lazy"
+                />
               </div>
-              <div class="cartaTexto">
-                <p class="tituloCarta">Contáctanos</p>
-                <p class="subtituloCarta">
+              <div class="carta-texto">
+                <p class="titulo-carta">Contáctanos</p>
+                <p class="subtitulo-carta">
                   Estamos aquí para ayudarte a transformar tus ideas en
                   realidad. Si tienes alguna pregunta, necesitas un consejo o
                   quieres comenzar con tu próximo proyecto, no dudes en
@@ -184,96 +200,100 @@
         </div>
       </section>
       <section id="contacto">
-        <form
-          id="contactForm"
-          action=""
-          method="GET"
-          onsubmit="return validateForm()"
-        >
-          <div>
-            <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-
-          <div>
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-
-          <div>
-            <label for="message">Mensaje</label>
-            <textarea id="message" name="message" rows="3" required></textarea>
-          </div>
-
-          <div>
-            <label>¿Cómo nos encontraste?</label>
-            <div class="checkbox-group">
-              <input
-                type="checkbox"
-                value="Redes Sociales"
-                id="redesSociales"
-                name="howFound"
-              />
-              <label for="redesSociales">Redes Sociales</label>
+        <div class="form-container">
+          <h2>Contáctanos</h2>
+          <form id="contactForm" method="POST" novalidate>
+            <img
+              src="/img/correo-de-contacto-2.png"
+              alt="Telefono sobre una carta"
+              width="50"
+              loading="lazy"
+            />
+            <div>
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" />
+              <span class="error-message" id="nameError"></span>
             </div>
-            <div class="checkbox-group">
-              <input
-                type="checkbox"
-                value="Búsqueda en Internet"
-                id="busquedaInternet"
-                name="howFound"
-              />
-              <label for="busquedaInternet">Búsqueda en Internet</label>
+
+            <div>
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" />
+              <span class="error-message" id="emailError"></span>
             </div>
-          </div>
 
-          <div>
-            <label for="selectOption">Motivo de Contacto</label>
-            <select id="selectOption" name="reason" required>
-              <option value="">Selecciona un motivo</option>
-              <option value="Consulta">Consulta</option>
-              <option value="Comentario">Comentario</option>
-              <option value="Solicitud">Solicitud</option>
-            </select>
-          </div>
+            <div>
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="3"></textarea>
+              <span class="error-message" id="messageError"></span>
+            </div>
 
-          <div>
-            <label for="exampleInputFile">Adjuntar Archivo</label>
-            <input type="file" id="exampleInputFile" />
-            <div id="fileHelp">Adjunta un archivo (opcional).</div>
-          </div>
+            <div>
+              <label>¿Cómo nos encontraste?</label>
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  value="Redes Sociales"
+                  id="redesSociales"
+                  name="howFound"
+                />
+                <label for="redesSociales">Redes Sociales</label>
+              </div>
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  value="Búsqueda en Internet"
+                  id="busquedaInternet"
+                  name="howFound"
+                />
+                <label for="busquedaInternet">Búsqueda en Internet</label>
+              </div>
+            </div>
 
-          <button type="submit">Enviar</button>
-        </form>
+            <div>
+              <label for="selectOption">Motivo de Contacto</label>
+              <select id="selectOption" name="reason">
+                <option value="">Selecciona un motivo</option>
+                <option value="Consulta">Consulta</option>
+                <option value="Comentario">Comentario</option>
+                <option value="Solicitud">Solicitud</option>
+              </select>
+              <span class="error-message" id="selectOptionError"></span>
+            </div>
+
+            <button type="submit">Enviar</button>
+            <span id="confirm" style="display: none">OK!</span>
+          </form>
+        </div>
+        <footer>
+          <ul class="social-icons">
+            <li>
+              <a href="https://www.facebook.com" target="_blank"
+                ><i class="bi bi-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com" target="_blank"
+                ><i class="bi bi-twitter"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com" target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com" target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </li>
+          </ul>
+          <p>&copy; 2024 Cisel. Todos los derechos reservados.</p>
+        </footer>
       </section>
     </main>
-    <footer>
-      <ul class="social-icons">
-        <li>
-          <a href="https://www.facebook.com" target="_blank"
-            ><i class="bi bi-facebook"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://www.twitter.com" target="_blank"
-            ><i class="bi bi-twitter"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com" target="_blank"
-            ><i class="bi bi-instagram"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com" target="_blank"
-            ><i class="bi bi-linkedin"></i
-          ></a>
-        </li>
-      </ul>
-      <p>&copy; 2024 Cincel. Todos los derechos reservados.</p>
-    </footer>
-    <script type="module" src="./js/validation.js"></script>
+
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/validation.js"></script>
     <script type="module" src="./js/modelsLoader.js"></script>
   </body>
 </html>

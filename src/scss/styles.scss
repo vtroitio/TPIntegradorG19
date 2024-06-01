@@ -84,7 +84,7 @@ section {
 }
 #productos {
   background-color: var(--second-color);
-  padding: 50px 30px;
+  padding: 80px 30px 50px 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,19 +97,31 @@ section {
 #contacto {
   background-color: var(--second-color);
   color: var(--first-color);
-  max-height: 95vh;
+  flex-direction: column;
 }
 
 /*  fatema estilo de contact */
+.form-container {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-container h2 {
+  color: var(--first-color);
+  margin-bottom: 35px;
+}
 form {
   background-color: var(--first-color);
   padding: 35px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 55%;
-  margin: 50px auto;
 }
-
+form img {
+  margin-bottom: 20px;
+}
 form div {
   /*display: flex;*/
   flex-direction: column;
@@ -158,22 +170,29 @@ form button[type='submit']:hover {
 .checkbox-group label {
   font-weight: normal;
 }
+.error-message {
+  color: red;
+  font-size: 0.875em;
+}
 
 /*  fatema contact */
 /*estilo para el footer*/
 footer {
   background-color: var(--second-color);
   color: var(--first-color);
-  height: 5vh;
+  width: 100%;
+  height: max-content;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 10px 0;
+  align-self: flex-end;
+  // padding: 10px 0;
 }
 
 footer p {
   color: var(--fourth-color);
+  margin-bottom: 15px;
 }
 
 .social-icons {
@@ -196,25 +215,17 @@ footer p {
 
 /*estilo para el footer*/
 
-// .carousel-control-prev,
-// .carousel-control-next,
-// .carousel-indicators {
-//     filter: invert(0.8);
-// }
-/*
-footer {
-  background-color: var(--second-color);
-  color: var(--first-color);
-  height: 5vh;
-} aqui */
 .hamburger-menu {
   display: none;
   position: absolute;
   top: 0;
   right: 0;
+  width: 100%;
   flex-direction: column;
   align-items: flex-end;
-  padding: 15px 15px 0 0;
+  padding: 15px 15px 15px 0;
+  background-color: var(--bar-background-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   gap: var(--hamburger-gap);
   z-index: 999;
   cursor: pointer;
@@ -270,7 +281,6 @@ footer {
   background-color: var(--bar-background-color);
   width: 100vw;
   height: 100vh;
-  z-index: -1;
 }
 .sidebar-link {
   font-size: 2rem;
@@ -280,13 +290,13 @@ footer {
   color: var(--second-color);
 }
 
-.containerGrandeResponsive {
+.container-grande {
   text-align: left;
   padding: 0 50px;
-  margin: 50px 0;
+  margin: 80px 0 50px 0;
 }
 
-.containerResponsive {
+.container {
   max-width: 1320px;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -296,49 +306,49 @@ footer {
   color: var(--third-color);
 }
 
-.containerResponsiveTextos {
+.container-textos {
   width: 100%;
   // margin: 0 auto;
 }
 
-.tituloSobreNosotros {
+.titulo-sobre-nosotros {
   line-height: 40px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   text-align: center;
 }
 
-.subtituloParrafo1 {
+.subtitulo-parrafo {
   line-height: 26px;
   color: var(--third-color);
   margin-bottom: 20px;
 }
 
-.imagenCarta {
+.imagen-carta {
   width: 31px;
   height: 31px;
 }
 
-.cajaImagen {
+.caja-imagen {
   padding: 20px;
   border: 1px solid rgb(229, 229, 229);
   border-radius: 10px;
   margin-right: 20px;
 }
 
-.cajaTarjeta {
+.caja-tarjeta {
   display: flex;
   align-items: flex-start;
   padding: 10px 15px;
 }
 
-.tituloCarta {
+.titulo-carta {
   line-height: 28px;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.subtituloCarta {
+.subtitulo-carta {
   color: var(--third-color);
   line-height: 22px;
 }
@@ -355,6 +365,14 @@ footer {
   }
   form {
     width: 80%;
+    margin: 20px auto 60px auto;
+  }
+  .form-container h2 {
+    margin-bottom: 0;
+    margin-top: 80px;
+  }
+  footer {
+    height: max-content;
   }
   #contacto {
     height: max-content;
@@ -366,58 +384,71 @@ footer {
   .sidebar {
     display: flex;
   }
-  // .containerResponsiveTextos {
+  // .container-textos {
   //     width: 100%;
   //     align-items: center;
   //     flex-direction: column;
   //     justify-content: center;
   // }
 
-  .tituloSobreNosotros {
+  .titulo-sobre-nosotros {
     text-align: center;
   }
 
-  .containerResponsive {
+  .container {
     flex-direction: column-reverse;
     flex-wrap: nowrap;
   }
 }
-
+@media (max-height: 1020px) {
+  section {
+    height: max-content;
+  }
+  form {
+    margin: 20px auto 60px auto;
+  }
+  .form-container h2 {
+    margin-bottom: 0;
+    margin-top: 80px;
+  }
+  .titulo-sobre-nosotros {
+    text-align: center;
+  }
+  .container {
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+  }
+}
 // Móvil
 @media (max-width: 450px) {
   * {
     font-size: 12px;
   }
-  .containerGrnadeResponsive {
+  .container-grande {
     padding: 10px 20px;
   }
 
-  .subtituloParrafo1 {
+  .subtitulo-parrafo {
     font-size: 16px;
     line-height: 23px;
   }
 
-  .tituloSobreNosotros {
+  .titulo-sobre-nosotros {
     font-size: 28px;
     line-height: 28px;
   }
 
-  .containerResponsiveTextos {
+  .container-textos {
     margin: 40px 0 50px 0;
   }
 
-  .explore {
-    width: 100%;
-    padding: 17px 0;
-  }
-
-  .tituloCarta {
+  .titulo-carta {
     font-size: 16px;
     line-height: 25px;
     margin-bottom: 8px;
   }
 
-  .cajaTarjeta {
+  .caja-tarjeta {
     padding: 10px 0;
   }
 }
@@ -429,7 +460,7 @@ footer {
 //   //     justify-content: center;
 //   // }
 
-//   .containerResponsiveTextos {
+//   .container-textos {
 //       width: 70%;
 //       margin: 0 auto;
 //   }
