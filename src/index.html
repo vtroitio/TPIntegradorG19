@@ -45,10 +45,15 @@
     </header>
     <main>
       <section id="inicio">
-        <h2>Inicio</h2>
+        <div class="container-title">
+          <h1 class="climate-crisis cisel-title">CISEL</h1>
+          <p class="cisel-paragraph">El límite es tu imaginación.</p>
+        </div>
+        <a href="#productos"> <i class="bi bi-arrow-down"></i> </a>
+        <canvas id="inicio-canvas"></canvas>
       </section>
       <section id="productos">
-        <h2>Nuestro Trabajo</h2>
+        <h2 class="climate-crisis">Nuestro Trabajo</h2>
         <div class="container">
           <div id="carousel-productos" class="carousel slide">
             <div class="carousel-indicators">
@@ -72,9 +77,22 @@
                 data-bs-slide-to="2"
                 aria-label="Slide 3"
               ></button>
+              <button
+              type="button"
+              data-bs-target="#carousel-productos"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
+                <canvas
+                  class="product-canvas d-block w-100"
+                  width="1116"
+                  height="600"
+                ></canvas>
+              </div>
+              <div class="carousel-item">
                 <canvas
                   class="product-canvas d-block w-100"
                   width="1116"
@@ -127,8 +145,7 @@
         <div class="container-grande">
           <div class="container">
             <div class="container-textos">
-              <h2 class="titulo-sobre-nosotros">Sobre Nosotros</h2>
-              <!-- <p class="tituloSobreNosotros">Sobre Nosotros</p> -->
+              <h2 class="climate-crisis titulo-sobre-nosotros">Sobre Nosotros</h2>
               <p class="subtitulo-parrafo">
                 <b>
                   Bienvenidos a Cisel, tu destino de confianza para artículos
@@ -201,7 +218,7 @@
       </section>
       <section id="contacto">
         <div class="form-container">
-          <h2>Contáctanos</h2>
+          <h2 class="climate-crisis">Contáctanos</h2>
           <form id="contactForm" method="POST" novalidate>
             <img
               src="/img/correo-de-contacto-2.png"
@@ -294,6 +311,6 @@
 
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/validation.js"></script>
-    <script type="module" src="./js/modelsLoader.js"></script>
+    <script type="module" src="./js/handleModels.js"></script>
   </body>
 </html>

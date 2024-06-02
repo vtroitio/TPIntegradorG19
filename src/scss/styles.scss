@@ -4,13 +4,15 @@
 
 // Montserrat Font
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+// Climate Crisis Font
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
 
 :root {
   // Colores
   --first-color: #fbfbfb;
   --second-color: #118191;
   --third-color: #31595e;
-  --fourth-color: #212121;
+  --fourth-color: #333333;
 
   // Hamburger
   --bar-width: 60px;
@@ -65,8 +67,6 @@ nav ul li a {
 }
 .navbar ul li a {
   color: var(--third-color);
-  animation: navbar-dinamica auto linear;
-  animation-timeline: scroll(root);
 }
 .navbar ul li a:hover {
   color: var(--second-color);
@@ -76,11 +76,56 @@ nav ul li a {
   position: absolute;
   min-width: 32px;
 }
+.climate-crisis {
+  font-family: 'Climate Crisis', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'YEAR' 2001;
+}
+.container-title {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.cisel-title {
+  font-variation-settings: 'YEAR' 1985;
+  font-size: 5.5rem;
+  background: linear-gradient(312deg, #42d392 25%, #10d1f8);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  -webkit-animation: gradient 5s ease infinite;
+  -moz-animation: gradient 5s ease infinite;
+  animation: gradient 5s ease infinite;
+}
+.cisel-paragraph {
+  color: var(--fourth-color);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.cisel-paragraph a {
+  color: var(--first-color);
+  text-decoration: none;
+  padding: 8px 15px 0 15px;
+}
+#inicio-canvas {
+  position: absolute;
+  z-index: -1;
+}
 section {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-flow: column;
+}
+#inicio a {
+  margin-bottom: 20px;
 }
 #productos {
   background-color: var(--second-color);
@@ -150,7 +195,7 @@ form input[type='checkbox'] {
 }
 
 form button[type='submit'] {
-  background-color: #31595e;
+  background-color: var(--third-color);
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -212,7 +257,19 @@ footer p {
   text-decoration: none;
   font-size: 24px;
 }
+.bi-arrow-down::before {
+  font-size: 5.5rem;
+  font-variation-settings: 'YEAR' 1985;
+  background: linear-gradient(312deg, #42d392 25%, #10d1f8);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
+  -webkit-animation: gradient 5s ease infinite;
+  -moz-animation: gradient 5s ease infinite;
+  animation: gradient 5s ease infinite;
+}
 /*estilo para el footer*/
 
 .hamburger-menu {
@@ -367,15 +424,18 @@ footer p {
     width: 80%;
     margin: 20px auto 60px auto;
   }
-  .form-container h2 {
-    margin-bottom: 0;
-    margin-top: 80px;
-  }
   footer {
     height: max-content;
   }
+  #inicio {
+    height: 100vh;
+  }
   #contacto {
     height: max-content;
+  }
+  .form-container h2 {
+    margin-bottom: 0;
+    margin-top: 80px;
   }
   .navbar {
     display: none;
@@ -384,17 +444,9 @@ footer p {
   .sidebar {
     display: flex;
   }
-  // .container-textos {
-  //     width: 100%;
-  //     align-items: center;
-  //     flex-direction: column;
-  //     justify-content: center;
-  // }
-
   .titulo-sobre-nosotros {
     text-align: center;
   }
-
   .container {
     flex-direction: column-reverse;
     flex-wrap: nowrap;
@@ -406,6 +458,9 @@ footer p {
   }
   form {
     margin: 20px auto 60px auto;
+  }
+  #inicio {
+    height: 100vh;
   }
   .form-container h2 {
     margin-bottom: 0;
@@ -423,6 +478,9 @@ footer p {
 @media (max-width: 450px) {
   * {
     font-size: 12px;
+  }
+  #inicio {
+    height: 100vh;
   }
   .container-grande {
     padding: 10px 20px;
@@ -453,15 +511,38 @@ footer p {
   }
 }
 
-// @media (min-width: 1024px) {
-//   // .containerResponsive {
-//   //     flex-direction: column-reverse;
-//   //     align-items: flex-start;
-//   //     justify-content: center;
-//   // }
+/*  Animaciones  */
 
-//   .container-textos {
-//       width: 70%;
-//       margin: 0 auto;
-//   }
-// }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 25% 0%;
+  }
+  50% {
+    background-position: 76% 100%;
+  }
+  100% {
+    background-position: 25% 0%;
+  }
+}
+@-moz-keyframes gradient {
+  0% {
+    background-position: 25% 0%;
+  }
+  50% {
+    background-position: 76% 100%;
+  }
+  100% {
+    background-position: 25% 0%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 25% 0%;
+  }
+  50% {
+    background-position: 76% 100%;
+  }
+  100% {
+    background-position: 25% 0%;
+  }
+}
