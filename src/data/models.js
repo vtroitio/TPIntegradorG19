@@ -5,11 +5,11 @@ export const models = [
     },
     {
         path: '/models/Flamingo.glb',
-        distance: 250,
+        distance: 350,
     },
     {
         path: '/models/Stork.glb',
-        distance: 250,
+        distance: 300,
     },
     {
         path: '/models/Parrot.glb',
