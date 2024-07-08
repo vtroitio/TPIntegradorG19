@@ -286,6 +286,17 @@
             <span id="confirm" style="display: none">OK!</span>
           </form>
         </div>
+        <section id="admin">
+          <h2>Administración de Productos</h2>
+          <form id="productForm">
+            <label for="productName">Nombre del Producto:</label>
+            <input type="text" id="productName" name="name" required>
+            <label for="productPrice">Precio del Producto:</label>
+            <input type="number" id="productPrice" name="price" required>
+            <button type="submit">Agregar Producto</button>
+          </form>
+          <div id="productList"></div>
+        </section>
         <footer>
           <ul class="social-icons">
             <li>
