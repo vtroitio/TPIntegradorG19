@@ -1,26 +1,43 @@
+require('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const sequelize = require('config/sequelize');
-const productRoutes = require('routes/products');
-
-
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
+const path = require('path');
+const connection = require('./db');
 const app = express();
+const port = 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+// Middleware Configuration
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/products', productRoutes);
+// Session Configuration
+const sessionStore = new MySQLStore({}, connection);
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: sessionStore
+}));
 
-sequelize.sync()
-  .then(() => {
-    console.log('Connected to the database');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+// View Engine Setup
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// Routes
+app.use('/api/users', require('./src/routes/users'));
+app.use('/auth', require('./src/routes/auth'));
+
+// Home Route
+app.get('/', (req, res) => {
+    if (req.session.user_id) {
+        res.redirect('/inicio');
+    } else {
+        res.redirect('/auth/login');
+    }
+});
+
+app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
 });

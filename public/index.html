@@ -30,6 +30,9 @@
             <li><a class="sidebar-link" href="#productos">Productos</a></li>
             <li><a class="sidebar-link" href="#nosotros">Nosotros</a></li>
             <li><a class="sidebar-link" href="#contacto">Contacto</a></li>
+            <li><a class="navbar-link" href="#login">Login</a></li>
+            <li><a class="navbar-link" href="#register">Registrar</a></li>
+
           </ul>
         </nav>
       </aside>
@@ -40,6 +43,9 @@
           <li><a class="navbar-link" href="#productos">Productos</a></li>
           <li><a class="navbar-link" href="#nosotros">Nosotros</a></li>
           <li><a class="navbar-link" href="#contacto">Contacto</a></li>
+          <li><a class="navbar-link" href="#login">Inicio de sesión</a></li>
+          <li><a class="navbar-link" href="#register">Registrar</a></li>
+
         </ul>
       </nav>
     </header>
@@ -286,17 +292,7 @@
             <span id="confirm" style="display: none">OK!</span>
           </form>
         </div>
-        <section id="admin">
-          <h2>Administración de Productos</h2>
-          <form id="productForm">
-            <label for="productName">Nombre del Producto:</label>
-            <input type="text" id="productName" name="name" required>
-            <label for="productPrice">Precio del Producto:</label>
-            <input type="number" id="productPrice" name="price" required>
-            <button type="submit">Agregar Producto</button>
-          </form>
-          <div id="productList"></div>
-        </section>
+       
         <footer>
           <ul class="social-icons">
             <li>
@@ -323,10 +319,50 @@
           <p>&copy; 2024 Cisel. Todos los derechos reservados.</p>
         </footer>
       </section>
+    </section>
+    <section id="login">
+      <h2 class="text-center">Inicio de sesión</h2>
+      <div class="row justify-content-center">
+          <div class="col-5">
+            <form id="loginForm" action="/login" method="post">
+                  <div>
+                      <label for="email" class="form-label">Correo: </label>
+                      <input type="email" class="form-control" name="email" id="email" required>
+                  </div>
+                  <div>
+                      <label for="password" class="form-label">Contraseña: </label>
+                      <input type="password" class="form-control" name="password" id="password" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+              </form>
+          </div>
+      </div>
+  
+      <section id="register">
+        <h2 class="text-center">Registro</h2>
+        <div class="row justify-content-center">
+            <div class="col-5">
+                <form id="registerForm" action="/register" method="post">
+                    <div>
+                        <label for="regEmail" class="form-label">Correo: </label>
+                        <input type="email" class="form-control" name="email" id="regEmail" required>
+                    </div>
+                    <div>
+                        <label for="regPassword" class="form-label">Contraseña: </label>
+                        <input type="password" class="form-control" name="password" id="regPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+  
     </main>
 
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/validation.js"></script>
     <script type="module" src="./js/handleModels.js"></script>
+    <script src="js/login.js"></script>
+
   </body>
 </html>
