@@ -7,6 +7,10 @@ const connection = require('./db');
 const app = express();
 const port = 3000;
 
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'public'));
+
 // Middleware Configuration
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -15,29 +19,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Session Configuration
 const sessionStore = new MySQLStore({}, connection);
 app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    store: sessionStore
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: sessionStore
 }));
 
-// View Engine Setup
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+// Auth Routes
+const authRouter = require('./src/routes/auth');
+app.use('/auth', authRoutes);
 
-// Routes
-app.use('/api/users', require('./src/routes/users'));
-app.use('/auth', require('./src/routes/auth'));
-
-// Home Route
+// Serve index.html as the main page
 app.get('/', (req, res) => {
-    if (req.session.user_id) {
-        res.redirect('/inicio');
-    } else {
-        res.redirect('/auth/login');
-    }
+  res.sendFile(path.join(__dirname, 'public', 'index.ejs'));
 });
 
+// Start the server
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });

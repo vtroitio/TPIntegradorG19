@@ -11,9 +11,6 @@ export default defineConfig({
     port: 5173,
   },
   optimizeDeps: {
-    include: [
-      'bootstrap',
-     
-    ],
+    include: ['bootstrap', 'path'], 
   },
 });
