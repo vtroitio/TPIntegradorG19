@@ -6,7 +6,6 @@ const connection = require('../../db');
 
 const router = express.Router();
 
-// Registro de usuario
 router.post('/register', async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -21,7 +20,6 @@ router.post('/register', async (req, res) => {
     }
 });
 
-// Inicio de sesión
 router.post('/login', (req, res) => {
     const { email, password } = req.body;
     connection.query('SELECT * FROM usuarios WHERE email = ?', [email], async (error, results) => {

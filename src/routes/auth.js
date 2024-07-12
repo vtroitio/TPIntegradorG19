@@ -1,7 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const bcryptjs = require('bcryptjs');
-const User = require('../models/User');
+import { Router } from 'express';
+import bcryptjs from 'bcryptjs';
+import User from '../models/User.js';
+
+const router = Router();
 
 router.post('/login', async (req, res) => {
     try {
@@ -35,4 +36,4 @@ router.get('/logout', (req, res) => {
     });
 });
 
-module.exports = router;
+export default router;

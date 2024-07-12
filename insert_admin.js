@@ -1,5 +1,7 @@
-require('dotenv').config();
-const mysql = require('mysql');
+import dotenv from 'dotenv';
+import mysql from 'mysql';
+
+dotenv.config();
 const bcrypt = require('bcryptjs');
 
 const connection = mysql.createConnection({
